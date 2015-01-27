@@ -5,7 +5,7 @@ Requests is an HTTP library, written in Python, for human beings. This library
 adds optional Coinbase Exchange API authentication support. Basic usage:
 
 
-.. code-block:: pycon
+..  code-block:: pycon
 
     >>> import requests
     >>> from CoinbaseExchangeAuth import CoinbaseAuth
@@ -14,7 +14,7 @@ adds optional Coinbase Exchange API authentication support. Basic usage:
     >>> #GETs work, shows account balances
     >>> r = requests.get(api_url + 'accounts', auth=auth)
     >>> print r.json()
-    >>> #POSTs fail: {message: 'invalid signature'}
+    {accounts: ...}
     >>> order = {}        
     >>> order['size'] = 0.01
     >>> order['price'] = 100
@@ -23,6 +23,7 @@ adds optional Coinbase Exchange API authentication support. Basic usage:
     >>> data = "{product_id:'BTC-USD'}"
     >>> r = requests.post(api_url + 'orders', data=json.dumps(order), auth=auth)
     >>> print r.json()
+    {message: 'invalid signature'}
     ...
 
 
