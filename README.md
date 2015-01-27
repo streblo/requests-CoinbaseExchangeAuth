@@ -20,12 +20,7 @@ adds optional Coinbase Exchange API authentication support. Basic usage:
     >>> order['side'] = 'buy'
     >>> order['product_id'] = 'BTC-USD'
     >>> data = "{product_id:'BTC-USD'}"
-    >>> r = requests.post(api_url + 'orders', data=json.dumps(order), auth=auth)
+    >>> r = requests.post(api_url + 'orders', json=order, auth=auth)
     >>> print r.json()
-    {message: 'invalid signature'}
+    {u'id': u'37cf0a2e-7ea9-4b90-...'}
 ```
-
-
-Known issues
------------------------
-  POST calls (setting orders, etc.) fail due to incorrect signature `400: {message: 'invalid signature'}`
