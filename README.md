@@ -13,13 +13,12 @@ adds optional Coinbase Exchange API authentication support. Basic usage:
     >>> #GETs work, shows account balances
     >>> r = requests.get(api_url + 'accounts', auth=auth)
     >>> print r.json()
-    {accounts: ...}
+    {u'accounts': ...}
     >>> order = {}        
     >>> order['size'] = 0.01
     >>> order['price'] = 100
     >>> order['side'] = 'buy'
     >>> order['product_id'] = 'BTC-USD'
-    >>> data = "{product_id:'BTC-USD'}"
     >>> r = requests.post(api_url + 'orders', json=order, auth=auth)
     >>> print r.json()
     {u'id': u'37cf0a2e-7ea9-4b90-...'}
